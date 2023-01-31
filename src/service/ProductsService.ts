@@ -1,16 +1,13 @@
-export class ProductsServices {}
+import useApi from "../hooks/useApi";
 
-const url_base = "https://mks-challenge-api-frontend.herokuapp.com/api/v1/";
-
-export const GetProducts = async (): Promise<any> => {
-  const result = await fetch(
-    url_base + `products?page=1&rows=10&sortBy=name&orderBy=ASC`,
-    {
-      method: "GET",
-    }
+let url_api = "https://mks-challenge-api-frontend.herokuapp.com/api/v1/";
+export const List = async (): Promise<any> => {
+  const { getApi } = useApi();
+  const result = await getApi(
+    `${url_api}products?page=1&rows=10&sortBy=name&orderBy=ASC`
   );
 
   return await result.json();
 };
 
-export const ProductsService = { GetProducts };
+export const ProductsService = { List };

@@ -1,17 +1,18 @@
-import { RootState } from "@/store/store";
+import { RootState } from "@/store";
 import { ShoppingCart } from "phosphor-react";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Button, Container, Logo } from "./styles";
 import { dialogCartShowOrHide } from "../../store/utilStore";
-import { NavMenu } from "../AppCarNav";
+import { NavMenu } from "../AppShoppingCart";
 interface AppHeaderType {
   buttonBaget?: number;
 }
 
 const AppHeader: React.FC<AppHeaderType> = (props: AppHeaderType) => {
-  const [isShowNav, setIsShowNav] = useState(true);
+  const [isShowCart, setIsShowCart] = useState(true);
+  //=============================
   const dispatch = useDispatch();
   const products = useSelector((state: RootState) => state.util.products);
 
@@ -24,7 +25,7 @@ const AppHeader: React.FC<AppHeaderType> = (props: AppHeaderType) => {
         </Logo>
         <Button
           onClick={() => {
-            setIsShowNav(true), dispatch(dialogCartShowOrHide(isShowNav));
+            setIsShowCart(true), dispatch(dialogCartShowOrHide(isShowCart));
           }}
         >
           <div>

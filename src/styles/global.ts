@@ -37,4 +37,14 @@ export default createGlobalStyle`
     border-radius: 15px;
     height: 5px;
   }
+
+
+
+
+@keyframes shine {
+	to {
+		// Move shine from left to right, with offset on the right based on the width of the shine - see background-size
+		background-position: right -40px top 0;
+	}
+}
 `;

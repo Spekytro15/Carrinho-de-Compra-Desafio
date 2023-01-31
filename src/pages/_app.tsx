@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 import theme from "@/styles/theme";
 import GlobalStyle from "../styles/global";
 import { Provider } from "react-redux";
-import { store } from "@/store/store";
+import { store } from "@/store";
 import { CookiesProvider } from "react-cookie";
 export default function App({ Component, pageProps }: AppProps) {
   return (

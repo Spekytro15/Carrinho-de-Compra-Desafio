@@ -1,8 +1,9 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import Header from "@/components/AppHeader";
-import AppDataView from "@/components/AppDataView";
+
 import ProducsPage from "./Products";
+import SkeletonLoading from "@/components/SpinnerLoading";
 
 const inter = Inter({ subsets: ["latin"] });
 

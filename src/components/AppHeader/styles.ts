@@ -3,6 +3,9 @@ import styled from "styled-components";
 //=================================
 
 export const Container = styled.div`
+  position: fixed;
+  margin-top: -15vh;
+  z-index: 10;
   width: 100%;
   height: 60px;
   background-color: ${(props) => props.theme.colors.primary};
@@ -20,7 +23,7 @@ export const Logo = styled.div`
   justify-items: center;
   align-items: center;
 
-  color: ${(props) => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.textPimary};
   h1 {
     margin-left: 5;
     font-weight: 600;

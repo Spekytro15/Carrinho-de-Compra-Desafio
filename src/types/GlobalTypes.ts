@@ -10,7 +10,7 @@ export type Product = {
   price: number;
   name?: string;
   photo?: string;
-  quantity?: number;
+  quantity: number;
   totalPrice: number;
   description?: string;
 };
