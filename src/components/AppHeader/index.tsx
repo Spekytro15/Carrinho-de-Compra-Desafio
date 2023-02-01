@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { Button, Container, Logo } from "./styles";
 import { dialogCartShowOrHide } from "../../store/utilStore";
-import { NavMenu } from "../AppShoppingCart";
+import NavMenu from "../AppShoppingCart";
 interface AppHeaderType {
   buttonBaget?: number;
 }

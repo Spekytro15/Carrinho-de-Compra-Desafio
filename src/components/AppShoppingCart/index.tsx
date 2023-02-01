@@ -2,7 +2,14 @@ import { RootState } from "@/store";
 import { Minus, Plus, XCircle } from "phosphor-react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ButtonEndShop, FooterNav, GridCardCar, StyledMenu } from "./styles";
+import Image from "next/image";
+import {
+  ButtonClose,
+  ButtonEndShop,
+  FooterNav,
+  GridCardCar,
+  StyledMenu,
+} from "./styles";
 import {
   addItemToCart,
   dialogCartShowOrHide,
@@ -12,7 +19,7 @@ import { Product } from "@/types/GlobalTypes";
 import { ButtonRemove, CardProduct, CardSelect } from "./style_cart";
 import theme from "@/styles/theme";
 
-export const NavMenu = () => {
+const NavMenu = () => {
   const [productsQtd, setProductsQtd] = useState(1);
   const [productsRender, setProductsRender] = useState<Product[]>([]);
   const [removeToCart, setRemoveToCart] = useState<Boolean>(false);
@@ -70,14 +77,19 @@ export const NavMenu = () => {
         <StyledMenu>
           <div>
             <h1>Carrinho de Compra</h1>
-            <button onClick={() => dispatch(dialogCartShowOrHide(false))}>
+            <ButtonClose onClick={() => dispatch(dialogCartShowOrHide(false))}>
               <XCircle size={32} color="#fafafa" weight="bold" />
-            </button>
+            </ButtonClose>
           </div>
           <GridCardCar>
             {productsRender.map((product: Product, index: number) => (
               <CardProduct key={product + String(index)}>
-                <img width={50} height={50} src={product.photo} alt="" />
+                <Image
+                  width={50}
+                  height={50}
+                  src={product.photo}
+                  alt="Produto"
+                />
 
                 <h2>{product.name}</h2>
 
@@ -95,7 +107,7 @@ export const NavMenu = () => {
                         weight="duotone"
                       />
                     </button>
-                    <h4>{product?.quantity}</h4>
+                    <h4 className="centro">{product?.quantity}</h4>
                     <button
                       className="button-l"
                       onClick={() => handleClickRemoveQtd(product)}
@@ -137,3 +149,5 @@ export const NavMenu = () => {
     </>
   );
 };
+
+export default NavMenu;

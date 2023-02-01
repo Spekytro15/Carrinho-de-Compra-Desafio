@@ -24,10 +24,10 @@ export const CardProduct = styled.div`
     margin-right: 5vh;
   }
   h3 {
-    margin-right: 2%;
+    margin-right: 5px;
     font-size: 14px;
     font-weight: 700;
-    margin-left: 20%;
+    margin-left: 5vh;
   }
   p {
     font-size: 5px;
@@ -44,17 +44,21 @@ export const CardSelect = styled.div`
   align-items: center;
   align-items: center;
   justify-items: center;
+  position: relative;
+  width: 100%;
 
-  h4 {
+  .centro {
     font-weight: 400;
     font-size: 8px;
     padding: 5px;
   }
   .button-l {
+    border: none;
     border-left: 0.1rem solid ${(props) => props.theme.colors.textGray};
     padding: 2px;
   }
   .button-r {
+    border: none;
     border-right: 0.1rem solid ${(props) => props.theme.colors.textGray};
     padding: 2px;
   }

@@ -6,6 +6,9 @@ import GlobalStyle from "../styles/global";
 import { Provider } from "react-redux";
 import { store } from "@/store";
 import { CookiesProvider } from "react-cookie";
+import Header from "@/components/AppHeader";
+import SpinnerLoading from "@/components/SpinnerLoading";
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -13,6 +16,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <ThemeProvider theme={theme}>
           <Provider store={store}>
             <GlobalStyle />
+            <Header />
+            <SpinnerLoading />
             <Component {...pageProps} />
           </Provider>
         </ThemeProvider>

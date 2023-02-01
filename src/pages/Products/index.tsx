@@ -10,10 +10,10 @@ import {
   FooterCard,
   HeaderCard,
   ImageCard,
-} from "./styles";
+} from "../../styles/products.styles";
 import { addItemToCart, Loading } from "../../store/utilStore";
 import { ProductsService } from "@/service/ProductsService";
-import SpinnerLoading from "@/components/SpinnerLoading";
+import Image from "next/image";
 
 interface ProducsPageType {
   Show?: number;
@@ -61,7 +61,12 @@ const ProducsPage: React.FC<ProducsPageType> = (props: ProducsPageType) => {
           {products?.map((product, index) => (
             <ContainerCard key={product + String(index)}>
               <ImageCard>
-                <img src={product.photo} width={120} height={120} alt="" />
+                <Image
+                  src={product.photo}
+                  width={120}
+                  height={120}
+                  alt="Produto"
+                />
               </ImageCard>
               <HeaderCard>
                 <h1>{product.name}</h1>

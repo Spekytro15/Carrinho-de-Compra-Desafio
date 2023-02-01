@@ -22,19 +22,25 @@ export const StyledMenu = styled.nav`
     display: flex;
   }
   h1 {
-    font-size: 27px;
+    width: 50%;
+    font-size: 20px;
     font-weight: 700;
     line-height: 33px;
     letter-spacing: 0em;
     text-align: left;
-  }
-  button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+    margin: 2%;
   }
 `;
+//=================================
 
+export const ButtonClose = styled.nav`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 10%;
+  margin-top: 2%;
+`;
 //=================================
 
 export const GridCardCar = styled.div`
@@ -64,10 +70,9 @@ export const GridCardCar = styled.div`
 
 export const FooterNav = styled.div`
   display: flex;
-  margin-top: 78vh;
-  h1 {
-    margin-right: 25vh;
-  }
+  margin-top: 121%;
+  align-items: center;
+  justify-items: center;
 `;
 //=================================
 export const ButtonEndShop = styled.div`
