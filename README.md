@@ -9,3 +9,5 @@ yarn dev
 # or
 pnpm dev
 ```
+
+<img src="../image/LogoPosto.png">
