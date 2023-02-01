@@ -1,19 +1,17 @@
+import theme from "@/styles/theme";
 import styled from "styled-components";
 
 export const Spinner = styled.div`
-  border: 16px solid white;
-  border-top: 16px blueviolet solid;
+  border: 16px solid ${theme.colors.hoverPrimary};
+  border-top: 16px ${theme.colors.primary} solid;
   border-radius: 50%;
   height: 120px;
   width: 120px;
   animation: spin 2s linear infinite;
-  /* 
-  border: 16px solid #f3f3f3; 
-  border-top: 16px solid #3498db;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite; */
+  position: absolute;
+  z-index: 20;
+  top: 50%;
+  left: 45%;
 
   @keyframes spin {
     0% {

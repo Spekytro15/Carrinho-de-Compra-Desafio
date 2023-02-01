@@ -15,7 +15,6 @@ const util = createSlice({
   name: "util",
   initialState: {
     products,
-    priceProducts: 0,
     dialogCart: false, //TODO ABRIR CARRINHO
     Loading: false, //TODO Loading
   },
@@ -64,8 +63,9 @@ const util = createSlice({
     removeProductsToCar(state, action: PayloadAction<any>) {
       const newItem = action.payload;
       //TODO VERIFICA O ID DO OBJETO E DELETA ELE
-      state.products.items.find((item, index) => {
+      state.products.items.map((item, index) => {
         if (item.id === newItem.id) {
+          console.log();
           state.products.items.splice(index, 1);
           state.products.totalPrice =
             state.products.totalPrice - item.totalPrice;

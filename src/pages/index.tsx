@@ -4,6 +4,7 @@ import Header from "@/components/AppHeader";
 
 import ProducsPage from "./Products";
 import SkeletonLoading from "@/components/SpinnerLoading";
+import SpinnerLoading from "@/components/SpinnerLoading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function Home() {
       </Head>
       <main className="body">
         <Header />
+        <SpinnerLoading />
         <ProducsPage />
       </main>
     </>

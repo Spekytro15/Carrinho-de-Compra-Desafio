@@ -32,7 +32,7 @@ export const NavMenu = () => {
 
   //=============================
   const handleNewProduct = (product: Product) => {
-    return {
+    let obj = {
       id: product.id,
       price: product.price,
       quantity: productsQtd,
@@ -40,6 +40,8 @@ export const NavMenu = () => {
       name: product.name,
       photo: product.photo,
     };
+
+    return obj;
   };
 
   //=============================

@@ -24,10 +24,10 @@ export const CardProduct = styled.div`
     margin-right: 5vh;
   }
   h3 {
-    margin-right: 5px;
+    margin-right: 2%;
     font-size: 14px;
     font-weight: 700;
-    margin-left: 5vh;
+    margin-left: 20%;
   }
   p {
     font-size: 5px;

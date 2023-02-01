@@ -12,14 +12,14 @@ import {
   ImageCard,
 } from "./styles";
 import { addItemToCart, Loading } from "../../store/utilStore";
-import SkeletonLoading from "@/components/SpinnerLoading";
 import { ProductsService } from "@/service/ProductsService";
+import SpinnerLoading from "@/components/SpinnerLoading";
 
-interface AppDataViewType {
+interface ProducsPageType {
   Show?: number;
 }
 
-const AppDataView: React.FC<AppDataViewType> = (props: AppDataViewType) => {
+const ProducsPage: React.FC<ProducsPageType> = (props: ProducsPageType) => {
   const [products, setProducts] = useState<Product[]>();
 
   //=============================
@@ -59,35 +59,30 @@ const AppDataView: React.FC<AppDataViewType> = (props: AppDataViewType) => {
       <Container>
         <ContainerGrid>
           {products?.map((product, index) => (
-            <>
-              <SkeletonLoading />
-              <ContainerCard key={product + String(index)}>
-                <ImageCard className="skeleton">
-                  <img src={product.photo} width={120} height={120} alt="" />
-                </ImageCard>
-                <HeaderCard>
-                  <h1 className="skeleton">{product.name}</h1>
-                  <span className="skeleton">
-                    R${String(product.price)?.substring(0, 4)}
-                  </span>
-                </HeaderCard>
-                <FooterCard>
-                  <p className="skeleton">{product.description}</p>
-                </FooterCard>
-                <ButtunAdd
-                  onClick={() =>
-                    dispatch(
-                      addItemToCart(handlAddCartNewProduct(index, product))
-                    )
-                  }
-                >
-                  <div>
-                    <Bag size={17} color="#fafafa" weight="bold" />
-                    <span>Comprar</span>
-                  </div>
-                </ButtunAdd>
-              </ContainerCard>
-            </>
+            <ContainerCard key={product + String(index)}>
+              <ImageCard>
+                <img src={product.photo} width={120} height={120} alt="" />
+              </ImageCard>
+              <HeaderCard>
+                <h1>{product.name}</h1>
+                <span>R${String(product.price)?.substring(0, 4)}</span>
+              </HeaderCard>
+              <FooterCard>
+                <p>{product.description}</p>
+              </FooterCard>
+              <ButtunAdd
+                onClick={() =>
+                  dispatch(
+                    addItemToCart(handlAddCartNewProduct(index, product))
+                  )
+                }
+              >
+                <div>
+                  <Bag size={17} color="#fafafa" weight="bold" />
+                  <span>Comprar</span>
+                </div>
+              </ButtunAdd>
+            </ContainerCard>
           ))}
         </ContainerGrid>
       </Container>
@@ -95,4 +90,4 @@ const AppDataView: React.FC<AppDataViewType> = (props: AppDataViewType) => {
   );
 };
 
-export default AppDataView;
+export default ProducsPage;

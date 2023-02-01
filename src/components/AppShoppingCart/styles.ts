@@ -22,7 +22,6 @@ export const StyledMenu = styled.nav`
     display: flex;
   }
   h1 {
-    margin-left: 10vh;
     font-size: 27px;
     font-weight: 700;
     line-height: 33px;
